@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crash-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crash-demo
+  template:
+    metadata:
+      labels:
+        app: crash-demo
+    spec:
+      containers:
+      - name: app
+        image: busybox
+        command: ["sh", "-c"]
+        args:
+          - |
+            if [ -z "$REQUIRED_ENV" ]; then
+              echo "REQUIRED_ENV is not set"
+              exit 1
+            fi
+            sleep 3600
