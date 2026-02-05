@@ -20,6 +20,8 @@ This setup runs fully locally with no external API dependencies.
 - **Agent Framework**: kagent
 - **Integration**: Slack bot using A2A protocol
 
+(If you want to setup ollama with kagent framework check out this repo -> https://github.com/rhegisan/wsl-kind-kagent-ollama3)
+
 ---
 
 ## What this does
@@ -51,6 +53,7 @@ Example queries:
 
 - No OpenAI / Anthropic / Gemini API keys required
 - Ollama runs as a container inside the kind cluster
+- Free local models like LLaMA 3.2 can demonstrate the pipeline and proof-of-concept, but they cannot fully replace a professional API model for real-time Kubernetes troubleshooting.
 
 ---
 
